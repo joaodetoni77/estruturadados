@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "grafo.h"
+#include "tad_grafo.h"
 
 int main()
 {
@@ -109,9 +109,6 @@ int main()
         }
 
     }
-
-
-
 
     return 0;
 }

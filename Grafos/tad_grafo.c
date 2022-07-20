@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "grafo.h"
+#include "tad_grafo.h"
 
-struct grafo{
+struct grafo {
     int ponderado;
     int num_vertices;
     int grau_max;
@@ -173,9 +173,7 @@ int procura_menor(float *distancia, int *visitado, int novo){
 
 
 void imprime_Grafo(Grafo *gr){
-    if(gr == NULL){
-        return 0;
-    }
+    
 
     int i, j;
 
