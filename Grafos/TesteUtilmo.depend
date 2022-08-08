@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1659219876 source:c:\users\guilo\documents\codes.teste\testeutilmo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tad_grafo.h"
+
+1659221150 c:\users\guilo\documents\codes.teste\testeutilmo\tad_grafo.h
+
+1659221582 source:c:\users\guilo\documents\codes.teste\testeutilmo\tad_grafo.c
+	<stdio.h>
+	<stdlib.h>
+	"tad_grafo.h"
+

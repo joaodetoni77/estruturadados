@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1659200190 source:c:\users\guilo\documents\codes.teste\codedord\functions.c
+	<stdio.h>
+	<stdlib.h>
+	"functions.h"
+
+1659200190 c:\users\guilo\documents\codes.teste\codedord\functions.h
+
+1659201520 source:c:\users\guilo\documents\codes.teste\codedord\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"functions.h"
+
