@@ -5,10 +5,10 @@
 
 
 //
-//O Algoritmo se baseia na ordena��o em sucessivas execu��es de particionamento,
+//O Algoritmo se baseia na ordenação em sucessivas execuções de particionamento,
 //Escolhendo um pivo e o posiciona no array, para que os
-//Elementos menores ou iguais ao pivo fiquem � esquerda e os maiores � direita.
-//Um arquivo Saida.txt � gerado na pasta local do programa, com os valores informados e ordenados.
+//Elementos menores ou iguais ao pivo fiquem a esquerda e os maiores a direita.
+//Um arquivo Saida.txt é gerado na pasta local do programa, com os valores informados e ordenados.
 //
 
 int main() {
@@ -24,11 +24,11 @@ int main() {
 
     int i, vetor_numeros[quantidade_valores];
     for(i = 0; i < quantidade_valores; i++) {
-        printf("Informe o %d� valor: ", i + 1);
+        printf("Informe o valor %d: ", i + 1);
         scanf("%d", & vetor_numeros[i]);
     }
 
-    //Manipual�ao dos arquivos e chama da fun��o de ordena��o
+    //Manipualção dos arquivos e chamada da função de ordenação
     file = fopen("saida.txt", "w");
     fprintf(file,"Dados inseridos:\n");
     for(i = 0; i < quantidade_valores; i++){

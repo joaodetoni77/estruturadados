@@ -3,22 +3,22 @@
 #include "tad_quicksort.h"
 
 
-//Fun��o respons�vel por fazer a troca entre dois valores
+//Função responsável por fazer a troca entre dois valores
 void troca_valores(int vetor_numeros[], int i, int j) {
 	int aux = vetor_numeros[i];
 	vetor_numeros[i] = vetor_numeros[j];
 	vetor_numeros[j] = aux;
 }
 
-// particiona e retorna o �ndice do piv�
+// particiona e retorna o índice do pivô
 int particiona(int vetor_numeros[], int inicio, int fim) {
 	int pivo, pivo_indice, i;
 
-	pivo = vetor_numeros[fim]; // o piv� � sempre o �ltimo elemento
+	pivo = vetor_numeros[fim]; // o pivô é sempre o último elemento
 	pivo_indice = inicio;
 
 	for(i = inicio; i < fim; i++) {
-		// verifica se o elemento � <= ao piv�
+		// verifica se o elemento é <= ao pivô
 		if(vetor_numeros[i] <= pivo)
 		{
 			// realiza a troca
@@ -28,18 +28,18 @@ int particiona(int vetor_numeros[], int inicio, int fim) {
 		}
 	}
 
-	// troca o piv�
+	// troca o pivô
 	troca_valores(vetor_numeros, pivo_indice, fim);
 
-	// retorna o �ndice do piv�
+	// retorna o índice do pivô
 	return pivo_indice;
 }
 
-//Fun��o que escolhe um piv� aleat�rio para evitar o pior caso do quicksort
+//Função que escolhe um pivô aleatário para evitar o pior caso do quicksort
 int particiona_random(int vet[], int inicio, int fim) {
 	int pivo_indice = (rand() % (fim - inicio + 1)) + inicio;
 
-	//Troca para colocar o piv� no fim
+	//Troca para colocar o pivô no fim
 	troca_valores(vet, pivo_indice, fim);
 	//Particionamento
 	return particiona(vet, inicio, fim);
@@ -47,7 +47,7 @@ int particiona_random(int vet[], int inicio, int fim) {
 
 void quick_sort(int vet[], int inicio, int fim) {
 	if(inicio < fim) {
-		// fun��o particionar retorna o �ndice do piv�
+		// função particionar retorna o índice do pivô
 		int pivo_indice = particiona_random(vet, inicio, fim);
 
 		// chamadas recursivas quick_sort
