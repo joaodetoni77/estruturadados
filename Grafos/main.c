@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "tad_grafo.h"
 
-int main()
-{
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+
     int vertices, gmax, pond;
     int origem, destino, dig;
     int busca;
@@ -19,12 +21,12 @@ int main()
     //0 para nao ponderado
     //1 para ponderado
 
-    printf("Informe o número de vértices: ");
-    scanf("%d", &vertices);
-    printf("\nInforme o grau máximo do grafo: ");
-    scanf("%d", &gmax);
-    printf("\nO grafo é ponderado?(1 para SIM e 0 para NAO) ");
-    scanf("%d", &pond);
+    printf("Informe o numero de vertices: ");
+    scanf("%d", & vertices);
+    printf("Informe o grau maximo do grafo: ");
+    scanf("%d", & gmax);
+    printf("Grafo ponderado?(1 para SIM e 0 para NAO) ");
+    scanf("%d", & pond);
 
     int ant[vertices];
     float distancia[vertices];
@@ -34,9 +36,8 @@ int main()
     gr = cria_Grafo(vertices, gmax, pond);
     teste = 1;
 
-
-    while(teste != -1)
-    {
+    while(teste != -1) {
+        printf("0 - Encerrar ExecuÃ§ao\n");
         printf("1 - Inserir Aresta\n");
         printf("2 - Remove Aresta\n");
         printf("3 - Apagar Grafo\n");
@@ -47,33 +48,29 @@ int main()
 
         scanf("%d",&op);
 
-        switch(op)
-        {
+        switch(op) {
         case 1:
             system("clear");
 
-            printf("Origem: \n");
-            scanf("%d", &origem);
-            printf("\nDestino: \n");
-            scanf("%d", &destino);
-            printf("0 - Digrafo\t 1 - Nao Digrafo\n");
-            scanf("%d", &dig);
+            printf("Origem: ");
+            scanf("%d", & origem);
+            printf("Destino: ");
+            scanf("%d", & destino);
+            printf("0 - Digrafo\t 1 - Nao Digrafo: ");
+            scanf("%d", & dig);
 
-            if(pond == 1)
-            {
+            if(pond == 1) {
                 printf("Peso: \n");
                 scanf("%f", &weight);
             }
 
             teste = insere_aresta(gr, origem, destino, dig, weight);
 // REMOVER DEPOIS
-            if(teste)
-            {
+            if(teste) {
                 printf("Sucesso!\n");
                 getchar();
             }
-            else
-            {
+            else {
                 printf("Falha!\n");
                 getchar();
             }
@@ -81,25 +78,23 @@ int main()
 
         case 2:
             system("clear");
-            printf("Origem: \n");
-            scanf("%d", &origem);
-            printf("Destino: \n");
-            scanf("%d", &destino);
-            printf("0 - Digrafo\t 1 - Nao Digrafo\n");
-            scanf("%d", &dig);
+            printf("Origem: ");
+            scanf("%d", & origem);
+            printf("Destino: ");
+            scanf("%d", & destino);
+            printf("0 - Digrafo\t 1 - Nao Digrafo: ");
+            scanf("%d", & dig);
 
             teste = remove_aresta(gr, origem, destino, dig);
 // REMOVER DEPOIS
-            if(teste)
-            {
+            if(teste) {
                 file = fopen("saida.txt", "a");
                 fprintf(file,"SUCESSO AO DELETAR\n");
                 printf("Sucesso!\n");
                 getchar();
                 fclose(file);
             }
-            else
-            {
+            else {
                 file = fopen("saida.txt", "a");
                 fprintf(file,"FALHA AO DELETAR\n");
                 printf("Falha!\n");
@@ -124,24 +119,21 @@ int main()
             break;
 
         case 5:
-            if(pond == 1)
-            {
+            if(pond == 1) {
                 printf("Vertice de Inicio\n");
                 scanf("%d", &busca);
                 busca_grafo(gr, busca, ant, distancia);
 
                 file = fopen("saida.txt", "a");
                 fprintf(file,"BUSCA MENOR DISTANCIA\n");
-                for(i = 0; i < vertices; i++)
-                {
+                for(i = 0; i < vertices; i++) {
                     printf("%d: %d -> %f\n",i,ant[i],distancia[i]);
                     fprintf(file,"%d: %d -> %f\n",i,ant[i],distancia[i]);
                 }
                 fprintf(file,"\n");
                 fclose(file);
             }
-            else
-            {
+            else {
                 file = fopen("saida.txt", "a");
                 printf("GRAFO NAO PONDERADO\n");
                 fprintf(file,"GRAFO NAO PONDERADO\n");
@@ -166,9 +158,7 @@ int main()
             teste = -1;
             fclose(file);
             break;
-
         }
-
     }
 
     return 0;

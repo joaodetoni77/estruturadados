@@ -16,8 +16,4 @@ void buscaProfundidade_aux(Grafo *gr, int inicio, int *visitado, int cont);
 void busca_grafo(Grafo *gr, int inicio, int *anterior, float *distancia);
 int procura_menor(float *distancia, int *visitado, int novo);
 
-
-
-
-
 void imprime_Grafo(Grafo *gr, FILE *file);

@@ -1,0 +1,17 @@
+Dados inseridos: 
+Nome paciente: Joao
+Numero do Quarto: 12
+Ala : 14
+Nome do Doutor: Teste
+Idade: 4
+Dias de sintomas: 20
+
+-----------------------------------------------
+Nome paciente: 0
+Numero do Quarto: 0
+Ala : 0
+Nome do Doutor: 0
+Idade: 0
+Dias de sintomas: 0
+
+-----------------------------------------------
